@@ -1,6 +1,8 @@
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -43,10 +45,18 @@ public class App extends Application{
     }
 
     public void startCounting() {
-        MESSolver solver = new MESSolver(startScreen.giveN());
-        solver.start();
-        mainScreen.getChildren().clear();
-        mainScreen.getChildren().add(solver.chart.getChart());
+        try{
+            MESSolver solver = new MESSolver(startScreen.giveN());
+            solver.start();
+            mainScreen.getChildren().clear();
+            mainScreen.getChildren().add(solver.chart.getChart());
+        }catch (IllegalArgumentException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Would you like to try again?", ButtonType.YES);
+            alert.setHeaderText(e.getMessage());
+            alert.setContentText("Would you like to try again?");
+            alert.showAndWait();
+            System.exit(1);
+        }
     }
 
 }
