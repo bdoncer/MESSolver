@@ -35,7 +35,7 @@ public class App extends Application{
     VBox mainScreen = new VBox();
     @Override
     public void start(Stage primaryStage){
-        primaryStage.setTitle("MRS");
+        primaryStage.setTitle("MES");
         mainScreen.setAlignment(Pos.CENTER);
         mainScreen.getChildren().add(startScreen.getWelcomeScreen());
         Scene scene = new Scene(mainScreen, 1000, 800);

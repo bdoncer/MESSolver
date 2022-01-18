@@ -4,24 +4,19 @@ public class MESSolver {
     static int n;
     public static Chart chart = new Chart("x","u(x)");
     public MESSolver(int n){
-         this.n = n;
+         MESSolver.n = n;
      }
     public static void start(){
-        System.out.println("n = "+ n);
-        System.out.println("matrixB");
         float[] matrixL = new float[n];
         float[][] matrixB = new float[n][n];
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 matrixB[i][j] = countB(i,j);
             }
-            System.out.println(Arrays.toString(matrixB[i]));
         }
         for(int i=0;i<n;i++){
             matrixL[i] = countL(i);
         }
-        System.out.println("matrixL");
-        System.out.println(Arrays.toString(matrixL));
         float[] res = gaussElimination(matrixB,matrixL);
         drawChart(res);
     }
@@ -83,11 +78,11 @@ public class MESSolver {
     }
 
     private static float countIntegralBoundaries(int i1,int i2){
-         float res = 0;
-         float i1FirstStart = countEiLow(i1,0);
-         float i1SecondStart = countEiLow(i1,1);
-         float i1FirstEnd = countEiHigh(i1,0);
-         float i1SecondEnd = countEiHigh(i1,1);
+        float res = 0;
+        float i1FirstStart = countEiLow(i1,0);
+        float i1SecondStart = countEiLow(i1,1);
+        float i1FirstEnd = countEiHigh(i1,0);
+        float i1SecondEnd = countEiHigh(i1,1);
         float i2FirstStart = countEiLow(i2,0);
         float i2SecondStart = countEiLow(i2,1);
         float i2FirstEnd = countEiHigh(i2,0);
@@ -180,8 +175,6 @@ public class MESSolver {
             }
             res[i]=(matrix[i][n]-sum)/matrix[i][i];
         }
-        System.out.println("solution");
-        System.out.println(Arrays.toString(res));
         return res;
     }
     private static float countU(float[] res, float x){
@@ -194,7 +187,7 @@ public class MESSolver {
 
     private static void drawChart(float[] res){
          float nr = 0;
-         while(nr <= 2){
+         while(nr <= 2.1){
              chart.addData(String.valueOf(nr),countU(res,nr));
              nr += 0.1;
          }
