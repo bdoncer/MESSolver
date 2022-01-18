@@ -3,6 +3,6 @@ Differential equation:
 
 
 
-![zdj1](zdj\zdj1.jpg)
+<img src="zdj/zdj1.jpg" />
 
-![zdj2](zdj\zdj2.jpg)
+<img src="zdj/zdj2.jpg" />
