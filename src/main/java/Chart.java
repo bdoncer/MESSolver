@@ -19,7 +19,7 @@ public class Chart {
         chart.setMinHeight(1);
         chart.setMinWidth(1);
         chart.setLegendVisible(false);
-        chart.setStyle("-fx-font-size: " + 13 + "px;");
+        chart.setStyle("-fx-font-size: " + 10 + "px;");
         chart.setCreateSymbols(false);
         series.getNode().lookup(".chart-series-line").setStyle("-fx-stroke: #ea88dc;");
     }
