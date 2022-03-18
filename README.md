@@ -5,4 +5,6 @@ Differential equation:
 
 <img src="zdj/zdj2.jpg" style="zoom:67%;" />
 
-![mes_gif](zdj/mes_gif.gif)
+<img src="zdj/mes_gif.gif" />
+
+
